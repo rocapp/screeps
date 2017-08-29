@@ -20,7 +20,7 @@ var roleRemember = {
         }
 	else {
 	    var sources = creep.room.find(FIND_SOURCES);
-	    if(creep.transfer(sources[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+	    if(creep.harvest(sources[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         }
