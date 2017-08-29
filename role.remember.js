@@ -13,11 +13,11 @@ var roleRemember = {
 
 	}
         if(creep.memory.working) {
-	    target = creep.room.controller.id
-            if(creep.upgradeController(Game.getObjectById(creep.memory.target) == ERR_NOT_IN_RANGE) {
-                creep.moveTo( Game.getObjectById(creep.memory.target) );
+	    var target = creep.room.controller.id;
+            if(creep.upgradeController( Game.getObjectById(target) ) == ERR_NOT_IN_RANGE ) {
+                creep.moveTo( Game.getObjectById(target) );
             }
-        }
+	}
         if(!creep.memory.working) {
             var sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
@@ -25,7 +25,7 @@ var roleRemember = {
             }
         }
 
-    }
+	
     /*
     make: function(game) {
 	var sources = creep.room.find(FIND_SOURCES)
