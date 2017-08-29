@@ -24,7 +24,7 @@ var roleRemember = {
                 creep.moveTo(sources[0]);
             }
         }
-
+    }
 	
     /*
     make: function(game) {
