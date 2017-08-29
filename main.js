@@ -30,6 +30,7 @@ module.exports.loop = function () {
 	    /*
 	    roleRemember.make(Game);
 	    */
+	    break;
 	}
 	else {
             Game.spawns['s1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(), { role: roles[r] } );     
