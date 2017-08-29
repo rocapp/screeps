@@ -3,7 +3,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
 
-var myCreeps = {'builder':0,'upgrader':10,'harvester':2,'repairer':1}
+var myCreeps = {'builder':1,'upgrader':10,'harvester':2,'repairer':1,'remember':1}
 function countRoles(rl,creeps) {
     var counter = 0;
     for (creep in creeps ) {
@@ -14,9 +14,10 @@ function countRoles(rl,creeps) {
     return counter;
 }
 
+
 module.exports.loop = function () {
     
-    var roles = ['harvester','upgrader','builder','repairer'];
+    var roles = ['harvester','upgrader','builder','repairer','remember'];
     for (r in roles) {
         var b = countRoles(roles[r],Game.creeps);
         /*
