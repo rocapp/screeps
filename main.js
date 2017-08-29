@@ -3,7 +3,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
 
-var myCreeps = {'builder':0,'upgrader':9,'harvester':2,'repairer':1}
+var myCreeps = {'builder':0,'upgrader':10,'harvester':2,'repairer':1}
 function countRoles(rl,creeps) {
     var counter = 0;
     for (creep in creeps ) {
