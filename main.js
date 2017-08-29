@@ -37,7 +37,7 @@ module.exports.loop = function () {
 					  target: sources[0].id } );     
 	    break;
 	}
-	else {
+	else if (b < myCreeps[roles[r]]) {
             Game.spawns['s1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(), { role: roles[r] } );     
             break;
         }    
