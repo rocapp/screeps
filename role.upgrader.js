@@ -19,7 +19,7 @@ var roleUpgrader = {
             }
         }
 	    else {
-		if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+		if(creep.transfer(creep.memory.target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(creep.memory.target, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         }
