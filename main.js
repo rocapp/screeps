@@ -27,14 +27,14 @@ module.exports.loop = function () {
         console.log(myCreeps[roles[r]]);
         */
         if (b < myCreeps[roles[r]] && roles[r]=='remember' ) {
-	    /*
 	    roleRemember.make(Game);
-	    */
+	    /*
 	    var sources = Game.spawns['s1'].room.find(FIND_SOURCES)
 	    Game.spawns['s1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK, CARRY, MOVE], roles[r] + Game.time.toString(),
 					{ role: roles[r],
 					  working: false,
 					  target: sources[0].id } );     
+	    */
 	    break;
 	}
 	else if (b < myCreeps[roles[r]]) {
