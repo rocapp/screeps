@@ -25,6 +25,15 @@ var roleUpgrader = {
         }
 
     }
+
+    make: function(spawn) {
+	var sources = creep.room.find(FIND_SOURCES)
+	Game.spawns[spawn].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(),
+					{ role: roles[r],
+					  upgrading: false,
+					  target: sources[0].id } );     
+    }
+
 };
 
 module.exports = roleUpgrader;
