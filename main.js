@@ -2,8 +2,10 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
+var roleRemember = require('role.remember');
 
 var myCreeps = {'builder':1,'upgrader':10,'harvester':2,'repairer':1,'remember':1}
+
 function countRoles(rl,creeps) {
     var counter = 0;
     for (creep in creeps ) {
@@ -13,7 +15,6 @@ function countRoles(rl,creeps) {
     }
     return counter;
 }
-
 
 module.exports.loop = function () {
     
@@ -25,7 +26,10 @@ module.exports.loop = function () {
         console.log(b);
         console.log(myCreeps[roles[r]]);
         */
-        if (b < myCreeps[roles[r]]) {
+        if (b < myCreeps[roles[r]] && roles[r]=='remember' ) {
+	    roleRemember.make(Game);
+	}
+	else {
             Game.spawns['s1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(), { role: roles[r] } );     
             break;
         }    
