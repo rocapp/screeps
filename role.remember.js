@@ -4,8 +4,8 @@ var roleRemember = {
     run: function(creep) {
 	if(creep.memory.working && creep.carry.energy == 0) {
 	    creep.memory.working = false;
+	    creep.memory.target = creep.room.controller.id;
 	    creep.say('i harvest');
-
 	}
 	if(!creep.memory.working && creep.carry.energy == creep.carryCapacity) {
 	    creep.memory.working = true;
@@ -13,9 +13,9 @@ var roleRemember = {
 
 	}
         if(creep.memory.working) {
-	    var target = creep.room.controller.id;
-            if(creep.upgradeController( Game.getObjectById(target) ) == ERR_NOT_IN_RANGE ) {
-                creep.moveTo( Game.getObjectById(target) );
+	    
+            if(creep.upgradeController( Game.getObjectById(creep.memory.target) ) == ERR_NOT_IN_RANGE ) {
+                creep.moveTo( Game.getObjectById(creep.memory.target) );
             }
 	}
         if(!creep.memory.working) {
