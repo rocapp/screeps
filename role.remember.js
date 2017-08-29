@@ -14,7 +14,7 @@ var roleRemember = {
 	}
         if(creep.memory.working) {
 	    target = creep.room.controller.id
-            if(creep.upgradeController(target) == ERR_NOT_IN_RANGE) {
+            if(creep.upgradeController(Game.getObjectById(creep.memory.target) == ERR_NOT_IN_RANGE) {
                 creep.moveTo( Game.getObjectById(creep.memory.target) );
             }
         }
