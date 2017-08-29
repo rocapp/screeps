@@ -28,7 +28,7 @@ var roleRemember = {
 	
 
     /** @param {Game} game **/
-    make: function(game) {
+    mk: function(game) {
 	var sources = creep.room.find(FIND_SOURCES)
 	game.spawns[spawn].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK, CARRY, MOVE], roles[r] + Game.time.toString(),
 					{ role: roles[r],
