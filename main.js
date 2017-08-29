@@ -27,7 +27,9 @@ module.exports.loop = function () {
         console.log(myCreeps[roles[r]]);
         */
         if (b < myCreeps[roles[r]] && roles[r]=='remember' ) {
+	    /*
 	    roleRemember.make(Game);
+	    */
 	}
 	else {
             Game.spawns['s1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(), { role: roles[r] } );     
@@ -50,5 +52,10 @@ module.exports.loop = function () {
         if(creep.memory.role == 'repairer') {
             roleRepairer.run(creep);
         }
+	/*
+        if(creep.memory.role == 'remember') {
+            roleRemember.run(creep);
+        }
+	*/
     }
 }
