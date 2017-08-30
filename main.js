@@ -28,9 +28,9 @@ function countRoles(rl,creeps) {
 }
 
 module.exports.loop = function () {
-    defendRoom(Game.spawns['s1'].room)
+    defendRoom(Game.spawns['Spawn1'].room)
     var roles = ['harvester','upgrader','builder','repairer','remember'];
-    var sources = Game.spawns['s1'].room.find(FIND_SOURCES)
+    var sources = Game.spawns['Spawn1'].room.find(FIND_SOURCES)
     for (r in roles) {
         var b = countRoles(roles[r],Game.creeps);
         /*
@@ -40,9 +40,9 @@ module.exports.loop = function () {
         */
         if (b < myCreeps[roles[r]] && roles[r]=='remember' ) {
 
-	    roleRemember.make(Game.spawns['s1'],roles[r]);
+	    // roleRemember.make(Game.spawns['Spawn1'],roles[r]);
 	    /*
-	    Game.spawns['s1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(),
+	    Game.spawns['Spawn1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(),
 					{ role: roles[r],
 					  working: false,
 					  target: sources[0].id } );     
@@ -51,7 +51,7 @@ module.exports.loop = function () {
 	    break;
 	}
 	else if (b < myCreeps[roles[r]]) {
-            Game.spawns['s1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(), { role: roles[r] } );     
+            Game.spawns['Spawn1'].createCreep( [WORK,CARRY,MOVE], roles[r] + Game.time.toString(), { role: roles[r] } );     
             break;
         }    
         
