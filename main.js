@@ -29,7 +29,7 @@ module.exports.loop = function () {
         */
         if (b < myCreeps[roles[r]] && roles[r]=='remember' ) {
 
-	    roleRemember.make(Game.spawns['s1']);
+	    roleRemember.make(Game.spawns['s1'],roles[r]);
 	    /*
 	    Game.spawns['s1'].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(),
 					{ role: roles[r],

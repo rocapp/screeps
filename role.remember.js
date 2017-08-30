@@ -29,10 +29,10 @@ var roleRemember = {
 	
 
 
-    make: function(spawn) {
+    make: function(spawn,myRole) {
 	var sources = spawn.room.find(FIND_SOURCES)
-	spawn.createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(),
-			    { role: roles[r],
+	spawn.createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], myRole + Game.time.toString(),
+			    { role: myRole,
 			      working: false,
 			      target: sources[0].id } );     
     }
