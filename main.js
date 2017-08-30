@@ -4,7 +4,7 @@ var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
 var roleRemember = require('role.remember');
 
-var myCreeps = {'builder':2,'upgrader':7,'harvester':3,'repairer':1,'remember':1}
+var myCreeps = {'builder':3,'upgrader':6,'harvester':3,'repairer':1,'remember':1}
 
 function countRoles(rl,creeps) {
     var counter = 0;
