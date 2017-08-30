@@ -4,7 +4,8 @@ var roleRemember = {
     run: function(creep) {
 	if(creep.memory.working && creep.carry.energy == 0) {
 	    creep.memory.working = false;
-
+            var sources = creep.room.find(FIND_SOURCES);
+	    creep.memory.target = sources[0].id
 	    creep.say('i harvest');
 	}
 	if(!creep.memory.working && creep.carry.energy == creep.carryCapacity) {
@@ -19,21 +20,21 @@ var roleRemember = {
             }
 	}
         if(!creep.memory.working) {
-            var sources = creep.room.find(FIND_SOURCES);
-            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(sources[0]);
+
+            if(creep.harvest( Game.getObjectById(creep.memory.target) ) == ERR_NOT_IN_RANGE) {
+                creep.moveTo( Game.getObjectById(creep.memory.target) );
             }
         }
     },
 	
 
-    /** @param {Game} game **/
-    make: function(game) {
+
+    make: function(spawn) {
 	var sources = creep.room.find(FIND_SOURCES)
-	game.spawns[spawn].createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(),
-					{ role: roles[r],
-					  working: false,
-					  target: sources[0].id } );     
+	spawns.createCreep( [WORK, CARRY, CARRY, MOVE, MOVE, WORK], roles[r] + Game.time.toString(),
+			    { role: roles[r],
+			      working: false,
+			      target: sources[0].id } );     
     }
 
 };
