@@ -6,12 +6,12 @@ var roleRemember = require('role.remember');
 
 var myCreeps = {'builder':3,'upgrader':6,'harvester':3,'repairer':1,'remember':1}
 
-function defendRoom(roomName) {
-    var hostiles = Game.rooms[roomName].find(FIND_HOSTILE_CREEPS);
+function defendRoom(room) {
+    var hostiles = room.find(FIND_HOSTILE_CREEPS);
     if(hostiles.length > 0) {
         var username = hostiles[0].owner.username;
         Game.notify(`User ${username} spotted in room ${roomName}`);
-        var towers = Game.rooms[roomName].find(
+        var towers = room.find(
             FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
         towers.forEach(tower => tower.attack(hostiles[0]));
     }
